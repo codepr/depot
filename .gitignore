@@ -26,3 +26,5 @@ depot-*.tar
 /tmp/
 
 .formatter.exs
+
+depot_dev.db
