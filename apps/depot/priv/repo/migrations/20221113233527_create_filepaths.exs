@@ -3,7 +3,7 @@ defmodule Depot.Repo.Migrations.CreateFilepaths do
 
   def change do
     create table(:filepaths) do
-      add :original_path, :string
+      add :bucket_key_prefix, :string
       add :local_name, :string
       add :size, :integer
       add :last_access, :utc_datetime

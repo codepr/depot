@@ -3,7 +3,7 @@ defmodule Depot.Filepath do
   use Ecto.Schema
 
   schema "filepath" do
-    field :original_path, :string
+    field :bucket_key_prefix, :string
     field :local_name, :string
     field :size, :integer
     field :last_access, :utc_datetime
@@ -11,7 +11,7 @@ defmodule Depot.Filepath do
 
   def changeset(filepath, params \\ %{}) do
     filepath
-    |> Ecto.Changeset.cast(params, [:original_path, :local_name, :size, :last_access])
-    |> Ecto.Changeset.validate_required([:original_path, :local_name])
+    |> Ecto.Changeset.cast(params, [:bucket_key_prefix, :local_name, :size, :last_access])
+    |> Ecto.Changeset.validate_required([:bucket_key_prefix, :local_name])
   end
 end
